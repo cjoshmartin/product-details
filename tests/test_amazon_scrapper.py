@@ -2,7 +2,7 @@ import os
 
 from playwright.sync_api import sync_playwright
 
-from main import get_meta_data
+from main.amazon import get_meta_data
 
 
 def test_work_on_book_link():
@@ -14,7 +14,7 @@ def test_work_on_book_link():
         'image': 'https://images-na.ssl-images-amazon.com/images/I/61n7-mARLML._AC_SY400_.jpg'
     }
 
-    link = f'file://{os.path.dirname(__file__)}/files_for_testing/living_with_pattern.html'
+    link = f'file://{os.path.dirname(__file__)}/files_for_testing/amazon/living_with_pattern.html'
 
     with sync_playwright() as p:
         iphone_11 = p.devices['iPhone 11 Pro']
@@ -41,7 +41,7 @@ def test_works_on_item_link():
         'price': 13.99,
         'image': 'https://images-na.ssl-images-amazon.com/images/I/41O2ZK4bq4L._AC_SY1000_.jpg'
     }
-    link = f'file://{os.path.dirname(__file__)}/files_for_testing/learn_to_solder_bug.html'
+    link = f'file://{os.path.dirname(__file__)}/files_for_testing/amazon/learn_to_solder_bug.html'
 
     with sync_playwright() as p:
         iphone_11 = p.devices['iPhone 11 Pro']
@@ -65,7 +65,7 @@ def test_works_on_unavailable():
         'is_currently_unavailable': True,
         'price': -1,
     }
-    link = f'file://{os.path.dirname(__file__)}/files_for_testing/unavailable_item.html'
+    link = f'file://{os.path.dirname(__file__)}/files_for_testing/amazon/unavailable_item.html'
 
     with sync_playwright() as p:
         iphone_11 = p.devices['iPhone 11 Pro']
